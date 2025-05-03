@@ -14,6 +14,30 @@ const agregaerTarea = tarea=>{
             setTareas(tareaActual);
     }
 }
+
+const eliminarTarea = (id)=>{
+    const tareasActualizadas = tareas.filter(
+        tarea => tarea.id !== id 
+    );
+    setTareas(tareasActualizadas);
+   
+      
+}
+const completartarea = id => {
+    console.log("xdd");
+    const tareasActualizadas = tareas.map(tarea =>{
+        if(tarea.id==id){
+            tarea.complete= !tarea.complete ;  
+        }
+
+        return tarea ; 
+    }
+
+    );
+    
+    setTareas(tareasActualizadas);
+}
+
     return(
         <>
         <FormTask onSubmit= {agregaerTarea} />
@@ -25,6 +49,9 @@ const agregaerTarea = tarea=>{
                     id={tarea.id}
                     text={tarea.texto}
                     complete={tarea.complete}
+                    completarTarea={completartarea}
+                    eliminarTarea={eliminarTarea}
+                    
                      />
                
                 ) 

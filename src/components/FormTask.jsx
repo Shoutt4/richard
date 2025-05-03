@@ -7,7 +7,7 @@ function FormTask (props){
 
     const manejarCambio = e =>{
        setText(e.target.value);
-
+    
     }
     const manejarEnvio  = e =>{
         e.preventDefault(); 
@@ -18,7 +18,10 @@ function FormTask (props){
 
         }
         props.onSubmit(tareaNueva);
+        
+        
     }
+   
     return(
         <div>
             <form 
