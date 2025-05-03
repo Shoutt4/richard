@@ -3,25 +3,31 @@ import { useState } from "react";
 import FormTask from "./FormTask";
 import '../style/contenedor.css'
 export default function Contenedor(){
-const [count,setCount] = useState([]);
+const [tareas,setTareas] = useState([]);
 
-const agregaerTarea = (tarea)=>{
-    console.log("xd");
-    console.log(tarea)
-
+const agregaerTarea = tarea=>{
+    if(tarea.texto.trim())
+        {
+           
+            tarea.texto= tarea.texto.trim(); 
+            const tareaActual = [tarea ,...tareas] ;
+            setTareas(tareaActual);
+    }
 }
     return(
         <>
-        <FormTask onSubmit ={agregaerTarea}/>
+        <FormTask onSubmit= {agregaerTarea} />
         <div className="tarea-lista-contenedor">
               {
-                count.map((count) => {
+                tareas.map((tarea) => 
                     <Task 
-                    text={count.text}
-                    complete={count.complete}
+                    key={tarea.id}
+                    id={tarea.id}
+                    text={tarea.texto}
+                    complete={tarea.complete}
                      />
-                }
-                )
+               
+                ) 
               }
         </div>
         </>

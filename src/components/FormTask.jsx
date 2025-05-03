@@ -1,7 +1,7 @@
 import '../style/form.css'
 import { useState } from 'react';
 import {v4 as uuidv4 }  from 'uuid' ;   
-function FormTask ({props}){
+function FormTask (props){
 
     const [text,setText] = useState(''); 
 
@@ -11,19 +11,19 @@ function FormTask ({props}){
     }
     const manejarEnvio  = e =>{
         e.preventDefault(); 
-        console.log("enviando formulario");
         const tareaNueva = {
             id : uuidv4() ,
             texto : text , 
             complete : false 
 
         }
-
         props.onSubmit(tareaNueva);
     }
     return(
         <div>
-            <form action="" className="tarea-formulario" onSubmit={manejarEnvio}>
+            <form 
+            className="tarea-formulario" 
+            onSubmit={manejarEnvio}>
                 <input 
                 type="text" 
                 className="tarea-input"
