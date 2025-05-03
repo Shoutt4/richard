@@ -1,28 +1,49 @@
-.tarea-formulario{
+.tarea-formulario {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Siempre en la misma fila */
     align-items: center;
     justify-content: center;
-}
-.tarea-input{
+  }
+  
+  .tarea-input {
     width: 350px;
+    max-width: 100%;
     font-size: 18px;
     background-color: white;
-    padding: 14px 32px 14px 16px;
-    border-radius: 4px 0 0;
+    padding: 14px 16px;
+    border-radius: 4px 0 0 4px;
     border: 2px solid #00471b;
     outline: none;
     color: #1b1b32;
-}
-.tareab-btn{
-    padding: 16px;
+    box-sizing: border-box;
+  }
+  
+  .tareab-btn {
+    padding: 14px 16px;
     font-size: 18px;
-    font-family: Roboto , sans-serif;
+    font-family: Roboto, sans-serif;
     border: none;
-    border-radius: 0 4px 4px 0 ;
+    border-radius: 0 4px 4px 0;
     cursor: pointer;
     outline: none;
     background: #00471b;
     color: white;
     text-transform: capitalize;
-}
+    box-sizing: border-box;
+  }
+  
+  /* Adaptable para teléfonos y pantallas pequeñas */
+  @media (max-width: 480px) {
+    .tarea-input {
+      width: 65%; /* input un poco más corto para que el botón quepa bien */
+      font-size: 16px;
+      padding: 12px 10px;
+    }
+  
+    .tareab-btn {
+      width: 35%; /* botón ocupa el resto */
+      padding: 12px 10px;
+      font-size: 16px;
+    }
+  }
+  

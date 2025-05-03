@@ -1,49 +1,82 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
-}
-h1{
+    box-sizing: border-box;
+  }
+  
+  h1 {
     text-align: center;
     color: #1b1b32;
     font-size: 25px;
     font-family: Roboto, sans-serif;
     margin: 20px 0;
-}
-html,
-body{
+  }
+  
+  html,
+  body {
     color: white;
     background-color: #1b1b32;
-    font-family: Lato,sans-serif;
-    margin-top: 40px;
-}
-.aplicacion-tareas{
+    font-family: Lato, sans-serif;
+   
+ 
+  }
+  
+  .aplicacion-tareas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-}
-.fre-code-logo{
+    gap: 15px; /* Espacio entre elementos */
+  }
+  
+  .fre-code-logo {
     width: 100%;
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.free-logo{
-    width: 400px;
-    height:50px ;
-
-}
-.tareas-lista-principal{
-    width: 600px;
+  }
+  
+  .free-logo {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+  }
+  
+  /* Contenedor de las tareas */
+  .tareas-lista-principal {
+    width: 100%;
+    max-width: 600px;
     min-height: 500px;
     background-color: #d0d0d5;
     padding: 25px;
     margin: 10px;
     border-radius: 26px;
-   
-   
-
-}
+  }
+  
+  /* Mejoramos el comportamiento responsive */
+  
+  /* En pantallas pequeñas (móviles), ya ocupa 100% */
+  
+  /* En pantallas medianas, un poco más compacto */
+  @media (min-width: 600px) {
+    .free-logo {
+      width: 300px;
+    }
+  
+    .tareas-lista-principal {
+      width: 90%;
+    }
+  }
+  
+  /* En pantallas grandes */
+  @media (min-width: 900px) {
+    .free-logo {
+      width: 400px;
+    }
+  
+    .tareas-lista-principal {
+      width: 600px;
+    }
+  }
+  

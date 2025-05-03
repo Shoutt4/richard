@@ -1,8 +1,9 @@
 .content {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     min-height: 65px;
     margin: 5px 0;
-    padding: 8px 15px 8px 20px ;
+    padding: 8px 15px 8px 20px;
     background-color: #1b1b32;
     display: flex;
     justify-content: space-between;
@@ -11,26 +12,52 @@
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid white;
-}
-.area-texto{
+    word-break: break-word; /* Mejor para palabras largas */
+  }
+  
+  .area-texto {
     width: 100%;
     height: 100%;
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     overflow-wrap: anywhere;
-
-}
-.task-icono{
+    word-break: break-word;
+  }
+  
+  .task-icono {
     width: 25px;
     height: 25px;
     margin: 5px;
-
-}
-.task-content{
-
-}
-.content.completado{
+  }
+  
+  .task-content {
+    /* Sin cambios, por ahora */
+  }
+  
+  .content.completado {
     background-color: #5a01a7;
     text-decoration: line-through;
-}
+  }
+  
+  /* Mejoras responsive */
+  
+  /* En pantallas medianas */
+  @media (min-width: 600px) {
+    .area-texto {
+      font-size: 20px;
+    }
+  }
+  
+  /* Opcional: si quieres que los íconos se reduzcan en móvil */
+  @media (max-width: 400px) {
+    .task-icono {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .area-texto {
+      font-size: 16px;
+    }
+  }
+  

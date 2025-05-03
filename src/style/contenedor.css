@@ -1,7 +1,21 @@
-.tarea-lista-contenedor{
+.tarea-lista-contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 15px;
-    
+    gap: 15px; /* Agrega un pequeño espacio entre los elementos */
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 600px) {
+    .tarea-lista-contenedor {
+        gap: 10px; /* Ajusta el espacio entre elementos para pantallas más pequeñas */
+    }
+}
+
+/* Adaptación para pantallas muy grandes (opcional) */
+@media (min-width: 1200px) {
+    .tarea-lista-contenedor {
+        gap: 20px; /* Mayor espacio en pantallas grandes */
+    }
 }
